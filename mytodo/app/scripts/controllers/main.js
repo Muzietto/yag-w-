@@ -10,13 +10,15 @@
  * Controller of the mytodoApp
  */
 angular.module('mytodoApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.todos = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karrma',
-      'Livestrong'
-    ];
+  .controller('MainCtrl', ['$scope', 'localStorageService', function ($scope, localStorageService) {
+    var todosInStore = localStorageService.get('todos');
+    var SAME_OBJECT = true;
+    
+    $scope.todos = todosInStore || [];
+    
+    $scope.$watch('todos', function() {
+      localStorageService.set('todos', $scope.todos);
+    }, SAME_OBJECT);
     
     $scope.addTodo = function() {
       $scope.todos.push($scope.todo);
@@ -34,6 +36,6 @@ angular.module('mytodoApp')
     $scope.removeLast = function() {
       $scope.todos.splice($scope.todos.length - 1, 1);
     };
-  });
+  }]);
 
-}());
+})();

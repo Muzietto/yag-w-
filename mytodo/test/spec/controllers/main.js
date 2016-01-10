@@ -24,12 +24,12 @@ describe('Controller: MainCtrl', function () {
   scope.todo = 'Test 1';
   scope.addTodo();
   expect(scope.todos.length).toBe(5);
-});
+  });
 
-it('should add then remove an item from the list', function () {
-  scope.todo = 'Test 12';
-  scope.addTodo();
-  scope.removeTodo(6);
-  expect(scope.todos.length).toBe(5);
-});
+  it('should add then remove an item from the list', function () {
+    scope.todo = 'Test 12';
+    scope.addTodo();
+    scope.removeTodo(6);
+    expect(scope.todos.length).toBe(5);
+  });
 });
