@@ -14,6 +14,18 @@
     </form>
     <p class="form-group" ng-repeat="todo in todos">
       <input type="text" ng-model="todo" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+      </span>
     </p>
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-warning" ng-click="removeFirst()" aria-label="RemoveFirst">Remove First</button>
+      </span>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-warning" ng-click="removeLast()" aria-label="RemoveLast">Remove Last</button>
+      </span>
+
+    </div>
   </div>
 </div>
