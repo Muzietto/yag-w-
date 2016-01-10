@@ -1,0 +1,11 @@
+{
+  "name": "mybootstrap",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+  },
+  "devDependencies": {
+  },
+  "appPath": "app",
+  "moduleName": "mybootstrapApp"
+}
